@@ -3,7 +3,6 @@ import { BiHome } from "react-icons/bi";
 import OverviewIcon from "@/components/icons/overview";
 import OnboadringIcon from "@/components/icons/Onboadring";
 import DollarIcon from "@/components/icons/dollar";
-import { PiUserCircleDuotone } from "react-icons/pi";
 
 export const sidebarMenuItems = [
   {
@@ -49,7 +48,7 @@ export const sidebarMenuItems = [
   {
     name: "Sales & payment",
     href: "#",
-    icon: <PiUserCircleDuotone />,
+    icon: <DollarIcon />,
     dropdownItems: [],
   },
 ];

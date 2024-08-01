@@ -6,6 +6,7 @@ import { BiHome } from "react-icons/bi";
 import OverviewIcon from "@/components/icons/overview";
 import OnboadringIcon from "@/components/icons/Onboadring";
 import DollarIcon from "@/components/icons/dollar";
+import CustomerIcon from "@/components/icons/customers";
 export interface SubMenuItemType {
   name: string;
   description?: string;
@@ -83,30 +84,44 @@ export const menuItems: MenuItemsType[] = [
       },
     ],
   },
- {
-    id: '3',
-    name: 'CRM',
-    title: 'CRM',
+  {
+    id: "3",
+    name: "CRM",
+    title: "CRM",
     icon: PiUserCircleDuotone,
     menuItems: [
       {
-        name: 'Overview',
-        href: '',
-        icon: () => <></>,
-        badge: '',
+        name: "Customers",
+        icon: CustomerIcon,
+        href: routes.overview,
       },
+
       {
-        name: 'Customer Data Handling',
-        href: '#',
-        icon: () => <></>,
-        badge: '',
-      },
-      {
-        name: 'Customer Interaction Tracking',
-        href: '#',
-        icon: () => <></>,
-        badge: '',
-      },
+        name: "Vehicle Onboarding",
+        icon: OnboadringIcon,
+        // subMenuItems: [
+        //   {
+        //     name: "Overview",
+        //     href: routes.inventory.overview,
+        //   },
+        //   {
+        //     name: "New Unit",
+        //     href: routes.inventory.newUnit,
+        //   },
+        //   {
+        //     name: "Transport",
+        //     href: routes.inventory.transport,
+        //   },
+        //   {
+        //     name: "Inspection & Reparing",
+        //     href: routes.inventory.inspectionAndRepair,
+        //   },
+        //   {
+        //     name: "Preparation & Detailing",
+        //     href: routes.inventory.preparationAndDetailing,
+        //   },
+        // ],
+      }
     ],
   },
 ];
