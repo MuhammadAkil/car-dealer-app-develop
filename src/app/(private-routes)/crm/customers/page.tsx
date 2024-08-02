@@ -3,7 +3,7 @@ import CustomerTable from "@/containers/crm/customers/customers-list/table";
 import { CustomersData, headerColsForCustomer } from "@/data/customers-data";
 
 const pageHeader = {
-  title: "Overview",
+  title: "Customers",
   breadcrumb: [
     {
       href: "/",
