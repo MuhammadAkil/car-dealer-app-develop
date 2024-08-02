@@ -5,12 +5,11 @@ import { getStatusBadge } from "./columns";
 import Image from "next/image";
 
 export default function ViewCar({ closeModal }: any) {
-  const carData = [
-    { label: "Stock No", value: "12045" },
-    { label: "Purchase Price", value: "$54000" },
-    { label: "Year", value: "2018" },
-    { label: "Odometer", value: "123342" },
-    { label: "Status", value: "Transport" },
+  const customerData = [
+    { label: "Phone", value: "+1234567890" },
+    { label: "State", value: "Indiana" },
+    { label: "City", value: "Indianapolis" },
+    
   ];
 
   return (
@@ -18,10 +17,8 @@ export default function ViewCar({ closeModal }: any) {
       <>
         <div className="grid gap-2">
           <div key={"make"} className="flex flex-col items-start">
-            <Title as="h5" className="font-medium text-gray-700 text-base">
-              Mercedes-Benz
-            </Title>
-            <div className="text-gray-500 block">S-Class</div>
+            <Title as="h5" className="font-medium text-gray-700 text-base">John Doe</Title>
+            <div className="text-gray-500 block">johndoe@example.com</div>
           </div>
           <div
             key={"phote"}
@@ -36,7 +33,7 @@ export default function ViewCar({ closeModal }: any) {
             >
               <Image
                 src={
-                  "/cars/kia.jpg"
+                  "/customers/view-customer.jpg"
                 }
                 alt={"photo"}
                 fill
@@ -47,7 +44,7 @@ export default function ViewCar({ closeModal }: any) {
               />
             </div>
           </div>
-          {carData.map(({ label, value }) => (
+          {customerData.map(({ label, value }) => (
             <>
               <>
                 <div key={label} className="flex flex-row items-center gap-1">

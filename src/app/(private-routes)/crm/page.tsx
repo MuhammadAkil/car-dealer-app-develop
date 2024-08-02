@@ -1,5 +1,6 @@
 import PageHeader from "@/components/pageHeader";
 import Overview from "@/containers/inventory/overview";
+import ModalButton from "@/shared/modal-button";
 
 const pageHeader = {
   title: "Customers",
@@ -9,8 +10,8 @@ const pageHeader = {
       name: "CRM",
     },
     {
-      href: "/inventory/overview",
-      name: "Overview",
+      href: "/crm/customers",
+      name: "Customers",
     },
   ],
 };
@@ -20,8 +21,8 @@ export default function CustomerPage() {
     <>
       <PageHeader
         title={pageHeader.title}
-        breadcrumb={pageHeader.breadcrumb}
-      ></PageHeader>
+        breadcrumb={pageHeader.breadcrumb}>
+        </PageHeader>
       <Overview />
     </>
   );

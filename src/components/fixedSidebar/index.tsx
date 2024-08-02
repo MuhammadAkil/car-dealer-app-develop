@@ -22,6 +22,7 @@ function MenuItem({ menu }: { menu: MenuItemsType }) {
   const Icon = menu.icon;
 
   const isActive = menuItems === menu;
+  console.log(isActive, menu,'is active')
 
   function handleClick() {
     setMenuItems(menu);

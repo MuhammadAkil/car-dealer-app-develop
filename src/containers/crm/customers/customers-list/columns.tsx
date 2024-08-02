@@ -85,69 +85,69 @@ export function getStatusBadge(status: string) {
 }
 
 // get stock status
-function getStockStatus(status: number) {
-  if (status === 0) {
-    return (
-      <>
-        <Progressbar
-          value={status}
-          color="danger"
-          label={"out of stock"}
-          className="h-1.5 w-24 bg-red/20"
-        />
-        <Text className="pt-1.5 text-[13px] text-gray-500">out of stock </Text>
-      </>
-    );
-  } else if (status <= 20) {
-    return (
-      <>
-        <Progressbar
-          value={status}
-          color="warning"
-          label={"low stock"}
-          className="h-1.5 w-24 bg-orange/20"
-        />
-        <Text className="pt-1.5 text-[13px] text-gray-500">
-          {status} low stock
-        </Text>
-      </>
-    );
-  } else {
-    return (
-      <>
-        <Progressbar
-          value={status}
-          color="success"
-          label={"stock available"}
-          className="h-1.5 w-24 bg-green/20"
-        />
-        <Text className="pt-1.5 text-[13px] text-gray-500">
-          {status} in stock
-        </Text>
-      </>
-    );
-  }
-}
+// function getStockStatus(status: number) {
+//   if (status === 0) {
+//     return (
+//       <>
+//         <Progressbar
+//           value={status}
+//           color="danger"
+//           label={"out of stock"}
+//           className="h-1.5 w-24 bg-red/20"
+//         />
+//         <Text className="pt-1.5 text-[13px] text-gray-500">out of stock </Text>
+//       </>
+//     );
+//   } else if (status <= 20) {
+//     return (
+//       <>
+//         <Progressbar
+//           value={status}
+//           color="warning"
+//           label={"low stock"}
+//           className="h-1.5 w-24 bg-orange/20"
+//         />
+//         <Text className="pt-1.5 text-[13px] text-gray-500">
+//           {status} low stock
+//         </Text>
+//       </>
+//     );
+//   } else {
+//     return (
+//       <>
+//         <Progressbar
+//           value={status}
+//           color="success"
+//           label={"stock available"}
+//           className="h-1.5 w-24 bg-green/20"
+//         />
+//         <Text className="pt-1.5 text-[13px] text-gray-500">
+//           {status} in stock
+//         </Text>
+//       </>
+//     );
+//   }
+// }
 
 // get rating calculation
-function getRating(rating: number[]) {
-  let totalRating = rating.reduce((partialSum, value) => partialSum + value, 0);
-  let review = totalRating / rating?.length;
+// function getRating(rating: number[]) {
+//   let totalRating = rating.reduce((partialSum, value) => partialSum + value, 0);
+//   let review = totalRating / rating?.length;
 
-  return (
-    <div className="flex items-center">
-      <span className="me-1 shrink-0">{review.toFixed(1)}</span>
-      {[...new Array(5)].map((arr, index) => {
-        return index < Math.round(review) ? (
-          <PiStarFill className="w-4 fill-orange text-orange" key={index} />
-        ) : (
-          <PiStarFill className="w-4 fill-gray-300 text-gray-300" key={index} />
-        );
-      })}{" "}
-      <span className="ms-1 shrink-0">({totalRating})</span>
-    </div>
-  );
-}
+//   return (
+//     <div className="flex items-center">
+//       <span className="me-1 shrink-0">{review.toFixed(1)}</span>
+//       {[...new Array(5)].map((arr, index) => {
+//         return index < Math.round(review) ? (
+//           <PiStarFill className="w-4 fill-orange text-orange" key={index} />
+//         ) : (
+//           <PiStarFill className="w-4 fill-gray-300 text-gray-300" key={index} />
+//         );
+//       })}{" "}
+//       <span className="ms-1 shrink-0">({totalRating})</span>
+//     </div>
+//   );
+// }
 
 type Columns = {
   data: any[];
@@ -212,12 +212,12 @@ export const getColumns = ({
       key: "customer",
       width: 300,
       render: (_: string, row: CustomerType) => (
-        <div className="flex gap-2 justify-start">
+        <div className="flex gap-3 justify-start">
           <div
             style={{
               position: "relative",
-              width: `${100}px`,
-              height: `${60}px`,
+              width: `${40}px`,
+              height: `${40}px`,
             }}
           >
             <Image
@@ -261,23 +261,23 @@ export const getColumns = ({
       width: 150,
       render: (userName: string) => <Text className="text-sm">{userName}</Text>,
     },
-    {
-      title: <HeaderCell title="AMOUNT" />,
-      dataIndex: "amount",
-      key: "amount",
-      width: 150,
-      render: (amount: string) => <Text className="text-sm">{amount}</Text>,
-    },
+    // {
+    //   title: <HeaderCell title="AMOUNT" />,
+    //   dataIndex: "amount",
+    //   key: "amount",
+    //   width: 150,
+    //   render: (amount: string) => <Text className="text-sm">{amount}</Text>,
+    // },
     
-    {
-      title: (
-        <HeaderCell title="Current Status" className="whitespace-nowrap" />
-      ),
-      dataIndex: "status",
-      key: "status",
-      width: 120,
-      render: (value: string) => getStatusBadge(value),
-    },
+    // {
+    //   title: (
+    //     <HeaderCell title="Current Status" className="whitespace-nowrap" />
+    //   ),
+    //   dataIndex: "status",
+    //   key: "status",
+    //   width: 120,
+    //   render: (value: string) => getStatusBadge(value),
+    // },
     {
       // Need to avoid this issue -> <td> elements in a large <table> do not have table headers.
       title: <HeaderCell title="Actions" className="opacity-0" />,
@@ -288,14 +288,14 @@ export const getColumns = ({
         <div className="flex items-center justify-end gap-3 pe-4">
           <Tooltip
             size="sm"
-            content={"Edit Product"}
+            content={"Edit Customer"}
             placement="top"
             color="invert"
           >
             <ActionIcon
               size="sm"
               variant="outline"
-              aria-label={"Edit Product"}
+              aria-label={"Edit Customer"}
               onClick={() => setModalOpen(true)}
             >
               <PencilIcon className="h-4 w-4" />
@@ -303,22 +303,22 @@ export const getColumns = ({
           </Tooltip>
           <Tooltip
             size="sm"
-            content={"View Product"}
+            content={"View Customer"}
             placement="top"
             color="invert"
           >
             <ActionIcon
               size="sm"
               variant="outline"
-              aria-label={"View Product"}
+              aria-label={"View Customer"}
               onClick={() => setViewModalOpen(true)}
             >
               <EyeIcon className="h-4 w-4" />
             </ActionIcon>
           </Tooltip>
           <CustomPopover
-            title={`Delete the product`}
-            description={`Are you sure you want to delete this #${row.id} product?`}
+            title={`Delete the customer`}
+            description={`Are you sure you want to delete this #${row.id} customer?`}
             onDelete={() => onDeleteItem(row.id)}
             button1Text="Yes"
             button2Text="No"

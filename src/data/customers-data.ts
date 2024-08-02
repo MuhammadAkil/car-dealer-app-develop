@@ -14,7 +14,7 @@ export const CustomersData: CustomerType[] = [
   {
     id: "1",
     name: "John Doe",
-    avatarURL: "/cars/chevrolet.jpg",
+    avatarURL: "/customers/profile-pic.jpg",
     email: "johndoe@example.com",
     phone: "+1234567890",
     createdAt: "2023-01-01T12:00:00Z",
@@ -25,7 +25,7 @@ export const CustomersData: CustomerType[] = [
   {
     id: "2",
     name: "Jane Smith",
-    avatarURL: "/cars/chevrolet.jpg",
+    avatarURL: "/customers/profile-pic.jpg",
     email: "janesmith@example.com",
     phone: "+0987654321",
     createdAt: "2023-02-15T08:30:00Z",
@@ -36,7 +36,7 @@ export const CustomersData: CustomerType[] = [
   {
     id: "3",
     name: "Alice Johnson",
-    avatarURL: "/cars/chevrolet.jpg",
+    avatarURL: "/customers/profile-pic.jpg",
     email: "alicejohnson@example.com",
     phone: "+1122334455",
     createdAt: "2023-03-20T14:45:00Z",
@@ -47,7 +47,7 @@ export const CustomersData: CustomerType[] = [
   {
     id: "4",
     name: "Bob Brown",
-    avatarURL: "/cars/chevrolet.jpg",
+    avatarURL: "/customers/profile-pic.jpg",
     email: "bobbrown@example.com",
     phone: "+1223344556",
     createdAt: "2023-04-10T09:20:00Z",
@@ -58,7 +58,7 @@ export const CustomersData: CustomerType[] = [
   {
     id: "5",
     name: "Carol White",
-    avatarURL: "/cars/chevrolet.jpg",
+    avatarURL: "/customers/profile-pic.jpg",
     email: "carolwhite@example.com",
     phone: "+1334455667",
     createdAt: "2023-05-25T11:10:00Z",

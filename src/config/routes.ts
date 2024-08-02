@@ -1,6 +1,6 @@
 export const routes = {
   overview: "/inventory",
-  customers: "/customers",
+  customers: "/crm/customers",
 
   inventory: {
     overview: "/inventory/vehicle-onboarding/overview",

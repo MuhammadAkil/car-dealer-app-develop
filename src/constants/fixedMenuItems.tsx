@@ -93,35 +93,35 @@ export const menuItems: MenuItemsType[] = [
       {
         name: "Customers",
         icon: CustomerIcon,
-        href: routes.crm.customers,
+        href: routes.customers,
       },
 
-      {
-        name: "Vehicle Onboarding",
-        icon: OnboadringIcon,
-        // subMenuItems: [
-        //   {
-        //     name: "Overview",
-        //     href: routes.inventory.overview,
-        //   },
-        //   {
-        //     name: "New Unit",
-        //     href: routes.inventory.newUnit,
-        //   },
-        //   {
-        //     name: "Transport",
-        //     href: routes.inventory.transport,
-        //   },
-        //   {
-        //     name: "Inspection & Reparing",
-        //     href: routes.inventory.inspectionAndRepair,
-        //   },
-        //   {
-        //     name: "Preparation & Detailing",
-        //     href: routes.inventory.preparationAndDetailing,
-        //   },
-        // ],
-      }
+      // {
+      //   name: "Vehicle Onboarding",
+      //   icon: OnboadringIcon,
+      //   // subMenuItems: [
+      //   //   {
+      //   //     name: "Overview",
+      //   //     href: routes.inventory.overview,
+      //   //   },
+      //   //   {
+      //   //     name: "New Unit",
+      //   //     href: routes.inventory.newUnit,
+      //   //   },
+      //   //   {
+      //   //     name: "Transport",
+      //   //     href: routes.inventory.transport,
+      //   //   },
+      //   //   {
+      //   //     name: "Inspection & Reparing",
+      //   //     href: routes.inventory.inspectionAndRepair,
+      //   //   },
+      //   //   {
+      //   //     name: "Preparation & Detailing",
+      //   //     href: routes.inventory.preparationAndDetailing,
+      //   //   },
+      //   // ],
+      // }
     ],
   },
 ];

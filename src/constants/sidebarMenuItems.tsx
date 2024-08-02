@@ -3,6 +3,7 @@ import { BiHome } from "react-icons/bi";
 import OverviewIcon from "@/components/icons/overview";
 import OnboadringIcon from "@/components/icons/Onboadring";
 import DollarIcon from "@/components/icons/dollar";
+import CustomerIcon from "@/components/icons/customers";
 
 export const sidebarMenuItems = [
   {
@@ -13,6 +14,11 @@ export const sidebarMenuItems = [
   {
     name: "Inventory",
   },
+ {
+        name: "Customers",
+        icon: CustomerIcon,
+        href: routes.customers,
+      },
   {
     name: "Overview",
     href: routes.overview,
