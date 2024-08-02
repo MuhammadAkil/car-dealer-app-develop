@@ -51,7 +51,7 @@ export function FilterDrawerView({
         <Button
           size="lg"
           onClick={() => setOpenDrawer(false)}
-          className="mt-5 h-11 w-full text-sm"
+          className="mt-5 h-11 w-full text-sm hover:bg-[#18746c]"
         >
           Show Results
         </Button>
