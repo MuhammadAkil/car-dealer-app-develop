@@ -9,5 +9,8 @@ export const routes = {
     inspectionAndRepair: "/inventory/vehicle-onboarding/inspection-and-repair",
     preparationAndDetailing: "/inventory/vehicle-onboarding/preparation-and-detailing",
   },
+  crm:{
+    customers: "/crm/customers",
+  },
   salesAndPayment: {},
 };

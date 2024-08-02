@@ -93,7 +93,7 @@ export const menuItems: MenuItemsType[] = [
       {
         name: "Customers",
         icon: CustomerIcon,
-        href: routes.overview,
+        href: routes.crm.customers,
       },
 
       {
