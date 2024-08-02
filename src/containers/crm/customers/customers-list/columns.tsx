@@ -16,6 +16,7 @@ import Image from "next/image";
 import WarningIcon from "@/components/icons/Warning";
 import TrashIcon from "@/components/icons/trash";
 import CustomPopover from "@/components/customPopover";
+import { CustomerType } from "@/data/customers-data";
 
 export type ProductType = {
   id: string;
@@ -56,9 +57,23 @@ export function getStatusBadge(status: string) {
       return (
         <div className="flex items-center">
           <Badge color="success" renderAsDot />
-          <Text className="ms-2 font-medium text-green-dark">{status}</Text>
+          <Text className="ms-2 font-medium text-green-light">{status}</Text>
         </div>
       );
+      case "inactive":
+        return (
+          <div className="flex items-center">
+            <Badge color="success" renderAsDot />
+            <Text className="ms-2 font-medium text-red-light">{status}</Text>
+          </div>
+        ); 
+             case "active":
+        return (
+          <div className="flex items-center">
+            <Badge color="success" renderAsDot />
+            <Text className="ms-2 font-medium text-green-dark">{status}</Text>
+          </div>
+        );
     default:
       return (
         <div className="flex items-center">
@@ -184,19 +199,19 @@ export const getColumns = ({
         </div>
       ),
     },
+    // {
+    //   title: <HeaderCell title="Customer" />,
+    //   dataIndex: "customer",
+    //   key: "customer",
+    //   width: 150,
+    //   render: (customer: string) => <Text className="text-sm">{customer}</Text>,
+    // },
     {
-      title: <HeaderCell title="AGE" />,
-      dataIndex: "age",
-      key: "age",
-      width: 150,
-      render: (age: string) => <Text className="text-sm">{age}</Text>,
-    },
-    {
-      title: <HeaderCell title="Profile" />,
-      dataIndex: "photo",
-      key: "photo",
+      title: <HeaderCell title="CUSTOMER" />,
+      dataIndex: "customer",
+      key: "customer",
       width: 300,
-      render: (_: string, row: ProductType) => (
+      render: (_: string, row: CustomerType) => (
         <div className="flex gap-2 justify-start">
           <div
             style={{
@@ -206,8 +221,8 @@ export const getColumns = ({
             }}
           >
             <Image
-              src={row.photo}
-              alt={row.stockNumber}
+              src={row.avatarURL}
+              alt={row.name}
               priority
               fill
               className="rounded-lg"
@@ -217,79 +232,43 @@ export const getColumns = ({
             />
           </div>
           <div>
-            <Text className="text-sm font-bold">{row.make}</Text>
-            <Text className="text-sm">{row.model}</Text>
+            <Text className="text-sm font-bold">{row.name}</Text>
+            <Text className="text-sm">{row.email}</Text>
           </div>
         </div>
       ),
     },
     {
-      title: <HeaderCell title="YEAR" />,
-      dataIndex: "year",
-      key: "year",
+      title: <HeaderCell title="PHONE" />,
+      dataIndex: "phone",
+      key: "phone",
       width: 150,
-      render: (year: string) => <Text className="text-sm">{year}</Text>,
+      render: (phone: string) => <Text className="text-sm">{phone}</Text>,
     },
     {
-      title: <HeaderCell title="stock No" />,
-      dataIndex: "stockNumber",
-      key: "stockNumber",
+      title: <HeaderCell title="CREATED" />,
+      dataIndex: "createdAt",
+      key: "createdAt",
       width: 150,
-      render: (stockNumber: string) => (
-        <Text className="text-sm">{stockNumber}</Text>
+      render: (createdAt: string) => (
+        <Text className="text-sm">{createdAt}</Text>
       ),
     },
     {
-      title: <HeaderCell title="VIN Number" />,
-      dataIndex: "vin",
-      key: "vin",
+      title: <HeaderCell title="USERNAME" />,
+      dataIndex: "userName",
+      key: "userName",
       width: 150,
-      render: (vin: string) => <Text className="text-sm">{vin}</Text>,
+      render: (userName: string) => <Text className="text-sm">{userName}</Text>,
     },
     {
-      title: <HeaderCell title="Odometer" />,
-      dataIndex: "odometer",
-      key: "odometer",
+      title: <HeaderCell title="AMOUNT" />,
+      dataIndex: "amount",
+      key: "amount",
       width: 150,
-      render: (odometer: string) => <Text className="text-sm">{odometer}</Text>,
+      render: (amount: string) => <Text className="text-sm">{amount}</Text>,
     },
-    {
-      title: <HeaderCell title="Purchase Price" />,
-      dataIndex: "purchasePrice",
-      key: "purchasePrice",
-      width: 150,
-      render: (purchasePrice: string) => (
-        <Text className="text-sm">{purchasePrice}</Text>
-      ),
-    },
-    {
-      title: <HeaderCell title="List Price" />,
-      dataIndex: "listPrice",
-      key: "listPrice",
-      width: 150,
-      render: (listPrice: string) => (
-        <Text className="text-sm">{listPrice}</Text>
-      ),
-    },
-    {
-      title: <HeaderCell title="Status Cost" />,
-      dataIndex: "statusCost",
-      key: "statusCost",
-      width: 150,
-      render: (statusCost: string) => (
-        <Text className="text-sm">{statusCost}</Text>
-      ),
-    },
-    {
-      title: <HeaderCell title="Est Profit" />,
-      dataIndex: "estProfit",
-      key: "estProfit",
-      width: 150,
-      render: (estProfit: string) => (
-        <Text className="text-sm">{estProfit}</Text>
-      ),
-    },
-
+    
     {
       title: (
         <HeaderCell title="Current Status" className="whitespace-nowrap" />

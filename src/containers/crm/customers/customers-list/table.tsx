@@ -93,7 +93,6 @@ export default function VehicleTable({
   );
 
   const { visibleColumns, checkedColumns, setCheckedColumns } =    useColumn(columns);
-console.log({columns})
   return (
     <>
       <ControlledTable
