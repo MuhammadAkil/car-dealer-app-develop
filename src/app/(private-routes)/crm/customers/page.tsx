@@ -64,7 +64,6 @@ export default function CustomersPage() {
           <div className="grid grid-cols-2 gap-y-6 gap-x-5 [&_label>span]:font-medium">
             <Input label="First Name *" inputClassName="border-2" size="lg" />
             <Input label="Last Name *" inputClassName="border-2" size="lg" />
-            
             <Input label="Email *" inputClassName="border-2" size="lg" className="col-span-1"/>
             <Input label="Email *" inputClassName="border-2" size="lg"className="col-span-1"/>
             <Input label="First Name *" inputClassName="border-2" size="lg" />

@@ -7,6 +7,7 @@ export const createCustomerSchema = z.object({
     lastName: z.string().min(1, { message: messages.lastName }),
     fullName: z.string().min(1, { message: messages.fullName }),
     Name: z.string().min(1, { message: messages.Name }),
+    userName: z.string().min(1, { message: messages.userName }),
     Mobile: z.string().min(1, { message: messages.Mobile }),
     Phone: z.string().min(1, { message: messages.Phone }),
     Company: z.string().min(1, { message: messages.Company }),

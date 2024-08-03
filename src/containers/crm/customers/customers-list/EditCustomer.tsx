@@ -85,7 +85,7 @@ export default function EditCar({ closeModal }: any) {
               placeholder="Enter User Name"
               {...register("userName")}
               className="col-span-full"
-              error={errors.Company?.message}
+              error={errors.userName?.message}
             />
             {/* <Controller
               name="City"
