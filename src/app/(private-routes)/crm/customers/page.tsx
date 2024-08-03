@@ -34,8 +34,9 @@ export default function CustomersPage() {
             header="ID,Name,Category,Product Thumbnail,SKU,Stock,Price,Status,Rating"
           /> */}
           <div className="-order-5 flex basis-auto justify-end @xl:-order-4 @4xl:-order-1">
-            <ModalButton
-              label="Add Unit"
+             <ModalButton
+             
+              label="New Customer"
               view={<CreateCar/>}
               customSize="600px"
               className="mt-0"

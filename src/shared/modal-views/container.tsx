@@ -3,7 +3,6 @@
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { Modal } from 'rizzui';
-// import { useModal } from './modal-views/use-modal';
 import { useModal } from './use-modal';
 
 export default function GlobalModal() {

@@ -9,4 +9,22 @@ export const messages = {
   CurrentStatus: "Current Status is required",
   Color: "Color is required",
   EngineCapacity: "Engine Capacity is required",
+  // add customer
+  firstName: "First Name is required",
+  lastName: "Last Name is required",  
+  fullName:"Full Name is required",
+  Company:"Company/Cosigner is required",
+  Gender:"Gender is required",
+  birthDate:"Full Name is required",
+  Email:"Email is required",
+  Mobile:"Mobile is required",
+  Address: "Full Name is required",
+  aptNumber: "APT.Number is required",
+  postalCode: "PostalCode/Zip is required",
+  City: "City is required",
+  State: "Province/State is required",
+  Country: "Full Name is required",
+  licenseNumber: "Driver license number is required",
+  licenseExpiryDate: "License Expiry Date is required",
+
 };
