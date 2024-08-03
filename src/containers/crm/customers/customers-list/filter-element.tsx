@@ -37,10 +37,10 @@ export default function FilterElement({
   return (
     <>
       <InputField
-        value={filters['age']}
-        onChange={(data) => updateFilter('age', data)}
-        label="Age"
-        placeholder="Enter car age"
+        value={filters['Name']}
+        onChange={(data) => updateFilter('ame', data)}
+        label="Name"
+        placeholder="Enter user name"
       />
       <InputField
         value={filters['year']}
@@ -49,10 +49,10 @@ export default function FilterElement({
         placeholder="Enter car year"
       />
       <InputField
-        value={filters['purchasePrice']}
-        onChange={(data) => updateFilter('purchasePrice', data)}
-        label="Purchase Price"
-        placeholder="Enter car purchase price"
+        value={filters['mobile']}
+        onChange={(data) => updateFilter('mobile', data)}
+        label="Mobile"
+        placeholder="Enter mobile"
       />
 
       <StatusField

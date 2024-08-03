@@ -12,7 +12,7 @@ type InputFieldTypes = {
 
 export default function InputField({
   label,
-  value,
+  value=[''],
   onChange,
   placeholder,
 }: InputFieldTypes) {

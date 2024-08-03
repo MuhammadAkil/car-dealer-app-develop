@@ -4,7 +4,7 @@ import { Title, Button } from "rizzui";
 import { getStatusBadge } from "./columns";
 import Image from "next/image";
 
-export default function ViewCar({ closeModal }: any) {
+export default function ViewCustomer({ closeModal }: any) {
   const customerData = [
     { label: "Phone", value: "+1234567890" },
     { label: "State", value: "Indiana" },

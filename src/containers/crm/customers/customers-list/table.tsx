@@ -8,8 +8,8 @@ import { Title, Modal, Button } from "rizzui";
 import ControlledTable from "@/components/controlledTable";
 import { PiXBold } from "react-icons/pi";
 import { getColumns } from "./columns";
-import EditCar from "./EditCar";
-import ViewCar from "./ViewCar";
+import EditCustomer from "./EditCustomer";
+import ViewCustomer from "./ViewCustomer";
 
 const FilterElement = dynamic(() => import("./filter-element"), { ssr: false });
 const TableFooter = dynamic(() => import("@/components/tableFooter"), {
@@ -17,7 +17,7 @@ const TableFooter = dynamic(() => import("@/components/tableFooter"), {
 });
 
 const filterState = {
-  age: "",
+  Name: "",
   year: "",
   purchasePrice: "",
   status: "",
@@ -164,7 +164,7 @@ export default function VehicleTable({
             <PiXBold className="h-5 w-5 text-base" />
           </Button>
         </div>
-        {<ViewCar closeModal={() => setViewModalOpen(false)} />}
+        {<ViewCustomer closeModal={() => setViewModalOpen(false)} />}
       </Modal>
 
       <Modal
@@ -179,7 +179,7 @@ export default function VehicleTable({
             as="h3"
             className="text-lg font-semibold text-gray-900 xl:text-xl"
           >
-            Edit Vehicle Details
+            Edit Customer Details
           </Title>
           <Button
             variant="text"
@@ -189,7 +189,7 @@ export default function VehicleTable({
             <PiXBold className="h-5 w-5 text-base" />
           </Button>
         </div>
-        {<EditCar closeModal={() => setModalOpen(false)} />}
+        {<EditCustomer closeModal={() => setModalOpen(false)} />}
       </Modal>
     </>
   );

@@ -6,6 +6,9 @@ export const createCustomerSchema = z.object({
     firstName: z.string().min(1, { message: messages.firstName }),
     lastName: z.string().min(1, { message: messages.lastName }),
     fullName: z.string().min(1, { message: messages.fullName }),
+    Name: z.string().min(1, { message: messages.Name }),
+    Mobile: z.string().min(1, { message: messages.Mobile }),
+    Phone: z.string().min(1, { message: messages.Phone }),
     Company: z.string().min(1, { message: messages.Company }),
     Gender: z.string().min(1, { message: messages.Gender }),
     birthDate: z.string().min(1, { message: messages.birthDate }),
@@ -21,4 +24,4 @@ export const createCustomerSchema = z.object({
 });
 
 // generate form types from zod validation schema
-export type CreateCarInput = z.infer<typeof createCustomerSchema>;
+export type CreateCustomerInput = z.infer<typeof createCustomerSchema>;

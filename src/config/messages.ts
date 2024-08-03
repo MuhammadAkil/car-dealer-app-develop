@@ -9,7 +9,9 @@ export const messages = {
   CurrentStatus: "Current Status is required",
   Color: "Color is required",
   EngineCapacity: "Engine Capacity is required",
-  // add customer
+  // add / edit customer
+  Name: "Customer Name is required",
+  userName: "User Name is required",
   firstName: "First Name is required",
   lastName: "Last Name is required",  
   fullName:"Full Name is required",
@@ -18,6 +20,7 @@ export const messages = {
   birthDate:"Full Name is required",
   Email:"Email is required",
   Mobile:"Mobile is required",
+  Phone:"Phone is required",
   Address: "Full Name is required",
   aptNumber: "APT.Number is required",
   postalCode: "PostalCode/Zip is required",

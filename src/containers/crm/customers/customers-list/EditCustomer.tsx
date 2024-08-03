@@ -4,10 +4,7 @@ import { useState } from "react";
 import { Controller, SubmitHandler } from "react-hook-form";
 import { Form } from "@/components/form";
 import { Input, Button, Select } from "rizzui";
-import {
-  CreateCarInput,
-  createCarSchema,
-} from "@/utils/validators/create-car.schema";
+import { CreateCustomerInput,createCustomerSchema } from "@/utils/validators/create-customer.schema";
 export const CARSTATUSES = {
   newArrival: "New Arrival",
   transport: "Transport",
@@ -25,7 +22,7 @@ export default function EditCar({ closeModal }: any) {
   const [reset, setReset] = useState({});
   const [isLoading, setLoading] = useState(false);
 
-  const onSubmit: SubmitHandler<CreateCarInput> = (data) => {
+  const onSubmit: SubmitHandler<CreateCustomerInput> = (data) => {
     const formattedData = {
       ...data,
       createdAt: new Date(),
@@ -44,10 +41,10 @@ export default function EditCar({ closeModal }: any) {
   };
 
   return (
-    <Form<CreateCarInput>
+    <Form<CreateCustomerInput>
       resetValues={reset}
       onSubmit={onSubmit}
-      validationSchema={createCarSchema}
+      validationSchema={createCustomerSchema}
       className="grid grid-cols-1 gap-6 p-4 pt-0 @container md:grid-cols-1 [&_.rizzui-input-label]:font-medium [&_.rizzui-input-label]:text-gray-900"
     >
       {({
@@ -63,21 +60,35 @@ export default function EditCar({ closeModal }: any) {
           <>
             <div className="col-span-2 flex flex-col items-center gap-4"></div>
             <Input
-              label="Purchase Price"
-              placeholder="Enter Car Purchase Price"
-              {...register("purchasePrice")}
+              label="Customer Name"
+              placeholder="Enter Customer Name"
+              {...register("Name")}
               className="col-span-full"
-              error={errors.purchasePrice?.message}
+              error={errors.Name?.message}
             />
             <Input
-              label="Odometer"
-              placeholder="Enter Car odometer"
-              {...register("Odometer")}
+              label="Customer Email"
+              placeholder="Enter Customer Email"
+              {...register("Email")}
               className="col-span-full"
-              error={errors.VinNumber?.message}
+              error={errors.Email?.message}
             />
-            <Controller
-              name="CurrentStatus"
+            <Input
+              label="Phone"
+              placeholder="Enter Phone"
+              {...register("Phone")}
+              className="col-span-full"
+              error={errors.Phone?.message}
+            />
+            <Input
+              label="User Name"
+              placeholder="Enter User Name"
+              {...register("userName")}
+              className="col-span-full"
+              error={errors.Company?.message}
+            />
+            {/* <Controller
+              name="City"
               control={control}
               render={({ field: { name, onChange, value } }) => (
                 <Select
@@ -87,7 +98,7 @@ export default function EditCar({ closeModal }: any) {
                   name={name}
                   label="Current Status"
                   className="col-span-full"
-                  error={errors?.CurrentStatus?.message}
+                  error={errors?.City?.message}
                   getOptionValue={(option) => option.value}
                   displayValue={(selected: string) =>
                     carStatuses.find((option) => option.value === selected)
@@ -97,7 +108,7 @@ export default function EditCar({ closeModal }: any) {
                   inPortal={false}
                 />
               )}
-            />
+            /> */}
 
             <div className="col-span-full flex items-center justify-end gap-4">
               <Button
@@ -105,7 +116,7 @@ export default function EditCar({ closeModal }: any) {
                 onClick={closeModal}
                 className="w-full @xl:w-auto"
               >
-                Edit more
+                Cancle
               </Button>
               <Button
                 type="submit"
