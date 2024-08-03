@@ -72,16 +72,16 @@ function CollapsibleMenuItem({ item }: { item: ItemType }) {
             "group relative flex cursor-pointer items-center justify-between rounded-full px-4 py-2 mb-2",
             isDropdownOpen
               ? ' rounded-full px-4 py- duration-200 bg-gray-100 font-bold text-[#18746c] dark:bg-gray-100 dark:text-primary"'
-              : "text-gray-700 transition-colors duration-200 hover:bg-gray-100 dark:text-gray-700/90 dark:hover:text-gray-700"
+              : "text-gray-700 group-hover:text-[#18746c] transition-colors duration-200 hover:bg-gray-100 dark:text-gray-700/90 dark:hover:text-gray-700"
           )}
         >
-          <span className="flex items-center">
+          <span className="flex items-center group-hover:text-[#18746c]">
             <span
               className={cn(
-                "me-2 inline-flex h-5 w-5 items-center justify-center rounded-md [&>svg]:h-[20px] [&>svg]:w-[20px]",
+                "me-2 inline-flex h-5 w-5 items-center justify-center rounded-md [&>svg]:h-[20px] [&>svg]:w-[20px] group-hover:fill-[#18746c] group-hover:text-[#18746c]",
                 isDropdownOpen
                   ? "font-bold text-[#18746c]"
-                  : "text-gray-800 dark:text-gray-500 dark:group-hover:text-gray-700"
+                  : "text-gray-800 dark:text-gray-500 dark:group-hover:text-gray-700 group-hover:text-[#18746c]"
               )}
             >
               <Icon color={isDropdownOpen ? "#18746c" : ""} />
@@ -91,7 +91,7 @@ function CollapsibleMenuItem({ item }: { item: ItemType }) {
           <PiCaretDownBold
             strokeWidth={3}
             className={cn(
-              "h-3.5 w-3.5 -rotate-90 text-gray-500 transition-transform duration-200 rtl:rotate-90",
+              "h-3.5 w-3.5 -rotate-90 group-hover:text-[#18746c] text-gray-500 transition-transform duration-200 rtl:rotate-90",
               open && "rotate-0 rtl:rotate-0"
             )}
           />
