@@ -18,7 +18,7 @@ export const carStatuses = Object.values(CARSTATUSES).map((status) => ({
   value: status,
 }));
 
-export default function EditCar({ closeModal }: any) {
+export default function EditCustomer({ closeModal }: any) {
   const [reset, setReset] = useState({});
   const [isLoading, setLoading] = useState(false);
 
