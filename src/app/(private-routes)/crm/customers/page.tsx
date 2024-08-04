@@ -58,6 +58,9 @@ export default function CustomersPage() {
     const [modalState, setModalState] = useState(false);
     const [value, setValue] = useState('Male');
     const [state, setState] = useState('California');
+    const handleCloseModal = () => {
+      setModalState(false);
+    };
 
     
 
@@ -68,55 +71,8 @@ export default function CustomersPage() {
         onClose={() => setModalState(false)}
         overlayClassName="backdrop-blur"
         containerClassName="!max-w-4xl !shadow-2xl"
-      
-      >
-        {/* <div className="m-auto px-7 pt-6 pb-8">
-          <div className="mb-7 flex items-center justify-between">
-          <h3><Text>New Customer</Text></h3>
-            <ActionIcon
-            
-              size="sm"
-              variant="text"
-              onClick={() => setModalState(false)} children={undefined}            >
-            </ActionIcon>
-          </div>
-          <div className="grid grid-cols-2 gap-y-6 gap-x-5 [&_label>span]:font-medium">
-            <Input label="First Name *" inputClassName="border-2" size="lg" className="col-span-1" />
-            <Input label="Last Name *" inputClassName="border-2" size="lg" className="col-span-1"/>
-            <Input label="Full Name *"  inputClassName="border-2" size="lg" className="col-span-1"/>
-            <Input label="Company/Cosigner *" inputClassName="border-2" size="lg"className="col-span-1"/>
-            <Select
-      label="Gender"
-      options={options}
-      value={value}
-      onChange={setValue}
-    />            <Input label="Birth Date *" type="datetime-local" inputClassName="border-2" size="lg" />
-            <Input label="Email *" inputClassName="border-2" size="lg" className="col-span-1"/>
-            <Input label="Mobile *" type="tel" inputClassName="border-2" size="lg"className="col-span-1"/>
-            <Textarea
-        label="Mailing Address *"
-        placeholder="Enter Vendor Address"
-      />
-            <Input label="APT, Number *" inputClassName="border-2" size="lg" />
-            <Input label="PostalCode/Zip *" inputClassName="border-2" size="lg" />
-            <Input label="City *" inputClassName="border-2" size="lg" className="col-span-1"/>
-            <Select
-      label="Province/State"
-      placeholder="Province/State"
-      options={states}
-      value={state}
-      onChange={setState}
-    />                <Button
-              type="submit"
-              size="lg"
-              className="col-span-2 mt-2 hover:bg-primaryHover"
-              onClick={() => setModalState(false)}
-            >
-              Add Customer
-            </Button>
-          </div>
-        </div> */}
-        <CreateCustomer closeModal={() => setModalState(false)}/>
+        >
+        <CreateCustomer closeModal={handleCloseModal}/>
         
       </Modal>
       <PageHeader
@@ -131,9 +87,8 @@ export default function CustomersPage() {
           /> */}
           <div className="-order-5 flex basis-auto justify-end @xl:-order-4 @4xl:-order-1">
              <ModalButton
-             
               label="New Customer"
-              view={<CreateCustomer closeModal={() => setModalState(false)}/>}
+              view={<CreateCustomer closeModal={handleCloseModal}/>}
               customSize="600px"
               className="mt-0"
               onClick={() => setModalState(true)}

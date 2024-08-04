@@ -22,6 +22,7 @@ export const createCustomerSchema = z.object({
     State: z.string().min(1, { message: messages.State }),
     licenseNumber: z.string().min(1, { message: messages.licenseNumber }),
     licenseExpiryDate: z.string().min(1, { message: messages.licenseExpiryDate }),
+    lincenseImage: z.string().min(1, { message: messages.lincenseImage }),
 });
 
 // generate form types from zod validation schema
