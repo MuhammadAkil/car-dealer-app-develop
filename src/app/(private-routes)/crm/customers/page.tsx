@@ -1,6 +1,7 @@
 
 "use client";
 import PageHeader from "@/components/pageHeader";
+import CreateCustomer from "@/containers/crm/customers/create/createCustomer";
 import CreateCar from "@/containers/crm/customers/create/createCustomer";
 // import EditCar from "@/containers/crm/customers/customers-list/EditCar";
 import CustomerTable from "@/containers/crm/customers/customers-list/table";
@@ -8,7 +9,7 @@ import ViewCar from "@/containers/crm/customers/customers-list/ViewCustomer";
 import { CustomersData, headerColsForCustomer } from "@/data/customers-data";
 import ModalButton from "@/shared/modal-button";
 import { useState } from "react";
-import {Modal,Button,Text,ActionIcon,Input} from "rizzui";
+import {Modal,Button,Text,ActionIcon,Input, Select, Textarea} from "rizzui";
 
 
 const statusOptions = [
@@ -40,8 +41,25 @@ const pageHeader = {
   ],
 };
 
+const options = [
+  { label: 'Male ', value: 'male' },
+  { label: 'Female ', value: 'femail' },
+  { label: 'Other', value: 'other' },
+];
+const states = [
+  {label: "California", value: "California" },
+  { label: "Texas", value: "Texas" },
+  { label: "Florida", value: "Florida" },
+  { label: "New York", value: "New York" }
+];
+
+
 export default function CustomersPage() {
     const [modalState, setModalState] = useState(false);
+    const [value, setValue] = useState('Male');
+    const [state, setState] = useState('California');
+
+    
 
   return (
     <>
@@ -50,8 +68,9 @@ export default function CustomersPage() {
         onClose={() => setModalState(false)}
         overlayClassName="backdrop-blur"
         containerClassName="!max-w-4xl !shadow-2xl"
+      
       >
-        <div className="m-auto px-7 pt-6 pb-8">
+        {/* <div className="m-auto px-7 pt-6 pb-8">
           <div className="mb-7 flex items-center justify-between">
           <h3><Text>New Customer</Text></h3>
             <ActionIcon
@@ -62,19 +81,32 @@ export default function CustomersPage() {
             </ActionIcon>
           </div>
           <div className="grid grid-cols-2 gap-y-6 gap-x-5 [&_label>span]:font-medium">
-            <Input label="First Name *" inputClassName="border-2" size="lg" />
-            <Input label="Last Name *" inputClassName="border-2" size="lg" />
+            <Input label="First Name *" inputClassName="border-2" size="lg" className="col-span-1" />
+            <Input label="Last Name *" inputClassName="border-2" size="lg" className="col-span-1"/>
+            <Input label="Full Name *"  inputClassName="border-2" size="lg" className="col-span-1"/>
+            <Input label="Company/Cosigner *" inputClassName="border-2" size="lg"className="col-span-1"/>
+            <Select
+      label="Gender"
+      options={options}
+      value={value}
+      onChange={setValue}
+    />            <Input label="Birth Date *" type="datetime-local" inputClassName="border-2" size="lg" />
             <Input label="Email *" inputClassName="border-2" size="lg" className="col-span-1"/>
-            <Input label="Email *" inputClassName="border-2" size="lg"className="col-span-1"/>
-            <Input label="First Name *" inputClassName="border-2" size="lg" />
-            <Input label="Last Name *" inputClassName="border-2" size="lg" />
-            <Input label="Email *" inputClassName="border-2" size="lg" className="col-span-1"/>
-            <Input label="Email *" inputClassName="border-2" size="lg"className="col-span-1"/>
-            <Input label="First Name *" inputClassName="border-2" size="lg" />
-            <Input label="Last Name *" inputClassName="border-2" size="lg" />
-            <Input label="Email *" inputClassName="border-2" size="lg" className="col-span-1"/>
-            <Input label="Email *" inputClassName="border-2" size="lg"className="col-span-1"/>
-            <Button
+            <Input label="Mobile *" type="tel" inputClassName="border-2" size="lg"className="col-span-1"/>
+            <Textarea
+        label="Mailing Address *"
+        placeholder="Enter Vendor Address"
+      />
+            <Input label="APT, Number *" inputClassName="border-2" size="lg" />
+            <Input label="PostalCode/Zip *" inputClassName="border-2" size="lg" />
+            <Input label="City *" inputClassName="border-2" size="lg" className="col-span-1"/>
+            <Select
+      label="Province/State"
+      placeholder="Province/State"
+      options={states}
+      value={state}
+      onChange={setState}
+    />                <Button
               type="submit"
               size="lg"
               className="col-span-2 mt-2 hover:bg-primaryHover"
@@ -83,7 +115,9 @@ export default function CustomersPage() {
               Add Customer
             </Button>
           </div>
-        </div>
+        </div> */}
+        <CreateCustomer closeModal={() => setModalState(false)}/>
+        
       </Modal>
       <PageHeader
         title={pageHeader.title}
@@ -99,7 +133,7 @@ export default function CustomersPage() {
              <ModalButton
              
               label="New Customer"
-              view={<CreateCar/>}
+              view={<CreateCustomer closeModal={() => setModalState(false)}/>}
               customSize="600px"
               className="mt-0"
               onClick={() => setModalState(true)}

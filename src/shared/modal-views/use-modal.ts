@@ -26,7 +26,7 @@ export function useModal() {
     customSize,
     size,
   }: {
-    view: React.ReactNode;
+    view: React.ReactNode
     customSize?: string;
     size?: ModalSize;
   }) => {

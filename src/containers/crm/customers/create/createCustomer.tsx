@@ -8,9 +8,10 @@ import { Input, Button, ActionIcon, Title, Select } from 'rizzui';
 // import { useModal } from '@/app/shared/modal-views/use-modal';
 import { useModal } from '@/shared/modal-views/use-modal';
 import {CreateCarInput,createCarSchema} from '@/utils/validators/create-car.schema';
-import FormGroup from '@/shared/form-group';
-export default function CreateCar() {
-  const { closeModal } = useModal();
+// import FormGroup from '@/shared/form-group';
+
+export default function CreateCar({closeModal}) {
+  // const { closeModal } = useModal();
   const [reset, setReset] = useState({});
   const [isLoading, setLoading] = useState(false);
 
@@ -55,7 +56,7 @@ export default function CreateCar() {
               <Title as="h4" className="font-semibold">
                 Add a new Car
               </Title>
-              <ActionIcon size="sm" variant="text" onClick={closeModal}>
+              <ActionIcon size="sm" variant="text"  onClick={closeModal}>
                 <PiXBold className="h-auto w-5" />
               </ActionIcon>
             </div>
