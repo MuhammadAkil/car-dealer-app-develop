@@ -113,7 +113,7 @@ export default function CreateCar({ closeModal }: CreateCustomerProps) {
             </div>
 
             <div className="py-3">
-              <Text className="mb-5 text-xl font-semibold">Personal Information:</Text>
+            <Title as="h6" className="mb-5 font-semibold">Personal Information:</Title>
               <div className="grid grid-cols-3 gap-y-6 gap-x-5 [&_label>span]:font-medium">
                 <Input
                   label="First Name"
@@ -177,7 +177,7 @@ export default function CreateCar({ closeModal }: CreateCustomerProps) {
               </div>
             </div>
             <div className="py-3">
-              <Text className="mb-5 text-xl font-semibold">Contact Information:</Text>
+            <Title as="h6" className="mb-5 font-semibold">Contact Information:</Title>
               <div className="grid grid-cols-2 gap-y-6 gap-x-5 [&_label>span]:font-medium">
                 <Input
                   label="Email"
@@ -198,7 +198,7 @@ export default function CreateCar({ closeModal }: CreateCustomerProps) {
               </div>
             </div>
             <div className="py-3">
-              <Text className="mb-3 text-xl font-semibold">Address Information:</Text>
+            <Title as="h6" className="mb-5 font-semibold">Address Information:</Title>
               <div className="grid grid-cols-3 py-3 gap-y-6 gap-x-5 [&_label>span]:font-medium">
                 <Input
                   label="APT Number"
@@ -295,7 +295,7 @@ export default function CreateCar({ closeModal }: CreateCustomerProps) {
             </div>
 
             <div className="py-3">
-              <Text className="mb-5 text-xl font-semibold">Driver Lincense Information:</Text>
+            <Title as="h6" className="mb-5 font-semibold">Driver Lincense Information:</Title>
               <div className="grid grid-cols-2 gap-y-6 gap-x-5 [&_label>span]:font-medium">
                 <Input
                   label="Driver Licens Number"
