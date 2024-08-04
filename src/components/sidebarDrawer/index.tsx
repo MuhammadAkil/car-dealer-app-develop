@@ -65,7 +65,7 @@ export default function Sidebar({ className }: { className?: string }) {
                                       : "text-gray-800 dark:text-gray-500 dark:group-hover:text-gray-700"
                                   )}
                                 >
-                                  {item?.icon}
+                                  {item?.icon as React.ReactNode}
                                 </span>
                               )}
                               {item.name}
@@ -133,7 +133,7 @@ export default function Sidebar({ className }: { className?: string }) {
                                   : "text-gray-800 dark:text-gray-500 dark:group-hover:text-gray-700"
                               )}
                             >
-                              {item?.icon}
+                              {item?.icon as React.ReactNode}
                             </span>
                           )}
                           <span className="truncate">{item.name}</span>

@@ -72,7 +72,7 @@ export default function FixedSidebar() {
   useEffect(() => {
     const activeMenuIndex = getActiveMainMenuIndex(pathname, menuItems);
     setMenuItems(menuItems[1]);
-  }, [pathname]);
+  }, [pathname, setMenuItems]);
 
   useEffect(() => {
     if (width < 1536) {
@@ -80,8 +80,7 @@ export default function FixedSidebar() {
     } else {
       setExpandedLeft(true);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [width, pathname]);
+  }, [width, pathname, setExpandedLeft]);
 
   return (
     <aside className="fixed start-0 top-0 z-50 hidden h-screen w-[88px] flex-col items-center gap-10 bg-gray-900 py-3.5 dark:bg-gray-0 xl:flex">
