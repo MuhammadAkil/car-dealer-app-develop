@@ -38,24 +38,30 @@ export default function FilterElement({
     <>
       <InputField
         value={filters['Name']}
-        onChange={(data) => updateFilter('ame', data)}
-        label="Name"
+        onChange={(data) => updateFilter('name', data)}
+        label="Customer Name"
         placeholder="Enter user name"
       />
       <InputField
-        value={filters['year']}
-        onChange={(data) => updateFilter('year', data)}
-        label="Year"
-        placeholder="Enter car year"
+        value={filters['email']}
+        onChange={(data) => updateFilter('email', data)}
+        label="Customer Email"
+        placeholder="Enter Email"
       />
       <InputField
-        value={filters['mobile']}
-        onChange={(data) => updateFilter('mobile', data)}
-        label="Mobile"
-        placeholder="Enter mobile"
+        value={filters['phone']}
+        onChange={(data) => updateFilter('phone', data)}
+        label="Phone"
+        placeholder="Enter Phone"
+      />
+      <InputField
+        value={filters['userName']}
+        onChange={(data) => updateFilter('userName', data)}
+        label="User Name"
+        placeholder="Enter User Name"
       />
 
-      <StatusField
+      {/* <StatusField
         label="Status"
         options={statusOptions}
         value={filters['status']}
@@ -67,7 +73,7 @@ export default function FilterElement({
           renderOptionDisplayValue(option.value as string)
         }
         displayValue={(selected: string) => renderOptionDisplayValue(selected)}
-      />
+      /> */}
       {isFiltered ? (
         <Button
           size="sm"
@@ -84,35 +90,35 @@ export default function FilterElement({
   );
 }
 
-function renderOptionDisplayValue(value: string) {
-  switch (value.toLowerCase()) {
-    case 'pending':
-      return (
-        <div className="flex items-center">
-          <Badge color="warning" renderAsDot />
-          <Text className="ms-2 font-medium capitalize text-orange-dark">
-            {value}
-          </Text>
-        </div>
-      );
-    case 'publish':
-      return (
-        <div className="flex items-center">
-          <Badge color="success" renderAsDot />
-          <Text className="ms-2 font-medium capitalize text-green-dark">
-            {value}
-          </Text>
-        </div>
-      );
+// function renderOptionDisplayValue(value: string) {
+//   switch (value.toLowerCase()) {
+//     case 'pending':
+//       return (
+//         <div className="flex items-center">
+//           <Badge color="warning" renderAsDot />
+//           <Text className="ms-2 font-medium capitalize text-orange-dark">
+//             {value}
+//           </Text>
+//         </div>
+//       );
+//     case 'publish':
+//       return (
+//         <div className="flex items-center">
+//           <Badge color="success" renderAsDot />
+//           <Text className="ms-2 font-medium capitalize text-green-dark">
+//             {value}
+//           </Text>
+//         </div>
+//       );
 
-    default:
-      return (
-        <div className="flex items-center">
-          <Badge renderAsDot className="bg-gray-400" />
-          <Text className="ms-2 font-medium capitalize text-gray-600">
-            {value}
-          </Text>
-        </div>
-      );
-  }
-}
+//     default:
+//       return (
+//         <div className="flex items-center">
+//           <Badge renderAsDot className="bg-gray-400" />
+//           <Text className="ms-2 font-medium capitalize text-gray-600">
+//             {value}
+//           </Text>
+//         </div>
+//       );
+//   }
+// }

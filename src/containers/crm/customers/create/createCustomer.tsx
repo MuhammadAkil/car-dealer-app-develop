@@ -314,8 +314,9 @@ export default function CreateCar({ closeModal }: CreateCustomerProps) {
                 <FileInput
                   label="Upload Driver Lincense"
                   rounded="lg"
+                  className="col-span-1"
+
                   {...register('lincenseImage')}
-                  error={errors.lincenseImage?.message}
 
                 />
               </div>
@@ -333,7 +334,7 @@ export default function CreateCar({ closeModal }: CreateCustomerProps) {
                 isLoading={isLoading}
                 className="hover:bg-primaryHover w-full @xl:w-auto"
               >
-                Add Car
+                Add Customer
               </Button>
             </div>
           </>
