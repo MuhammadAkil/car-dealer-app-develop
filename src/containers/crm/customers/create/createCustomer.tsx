@@ -114,7 +114,7 @@ export default function CreateCar({ closeModal }: CreateCustomerProps) {
 
             <div className="py-3">
             <Title as="h6" className="mb-5 font-semibold">Personal Information:</Title>
-              <div className="grid grid-cols-3 gap-y-6 gap-x-5 [&_label>span]:font-medium">
+``              <div className="grid grid-cols-3 gap-y-6 gap-x-5 [&_label>span]:font-medium">
                 <Input
                   label="First Name"
                   placeholder="Enter First Name"
