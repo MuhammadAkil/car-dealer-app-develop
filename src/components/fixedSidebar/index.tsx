@@ -8,11 +8,7 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import SimpleBar from "@/components/simpleBar";
 import { useWindowSize } from "@/hooks/useWindowSize";
-import {
-  MenuItemsType,
-  menuItemAtom,
-  menuItems,
-} from "../../constants/fixedMenuItems";
+import { MenuItemsType, menuItemAtom, menuItems } from "../../constants/fixedMenuItems";
 import { getActiveMainMenuIndex } from "@/utils/getActiveMainMenuIndex";
 import { useSidebars } from "@/hooks/useSidebars";
 
@@ -22,7 +18,6 @@ function MenuItem({ menu }: { menu: MenuItemsType }) {
   const Icon = menu.icon;
 
   const isActive = menuItems === menu;
-  console.log(isActive, menu,'is active')
 
   function handleClick() {
     setMenuItems(menu);
@@ -34,12 +29,12 @@ function MenuItem({ menu }: { menu: MenuItemsType }) {
   return (
     <li
       onClick={handleClick}
-      className="group flex cursor-pointer flex-col items-center gap-1.5 pb-1.5 "
+      className="group flex cursor-pointer flex-col items-center gap-1.5 pb-1.5"
     >
       <span
         className={cn(
           "rounded-3xl bg-gray-0/0 px-4 py-2 text-white transition-colors duration-200 group-hover:bg-gray-0 group-hover:text-gray-900 dark:group-hover:bg-gray-100",
-          isActive && "bg-gray-0 text-gray-900 dark:bg-gray-100 "
+          isActive && "bg-gray-0 text-gray-900 dark:bg-gray-100"
         )}
       >
         <Icon className="h-auto w-6" />
@@ -48,6 +43,7 @@ function MenuItem({ menu }: { menu: MenuItemsType }) {
     </li>
   );
 }
+
 
 function MenuItems() {
   return (
@@ -71,7 +67,7 @@ export default function FixedSidebar() {
 
   useEffect(() => {
     const activeMenuIndex = getActiveMainMenuIndex(pathname, menuItems);
-    setMenuItems(menuItems[1]);
+    setMenuItems(menuItems[activeMenuIndex]);
   }, [pathname, setMenuItems]);
 
   useEffect(() => {

@@ -14,11 +14,11 @@ export const sidebarMenuItems = [
   {
     name: "Inventory",
   },
- {
-        name: "Customers",
-        icon: CustomerIcon,
-        href: routes.customers,
-      },
+  {
+    name: "Customers",
+    icon: <CustomerIcon />,
+    href: routes.customers,
+  },
   {
     name: "Overview",
     href: routes.overview,

@@ -7,6 +7,7 @@ import OverviewIcon from "@/components/icons/overview";
 import OnboadringIcon from "@/components/icons/Onboadring";
 import DollarIcon from "@/components/icons/dollar";
 import CustomerIcon from "@/components/icons/customers";
+// import CustomerIcon from "@/components/icons/customers";
 export interface SubMenuItemType {
   name: string;
   description?: string;
@@ -50,7 +51,6 @@ export const menuItems: MenuItemsType[] = [
         icon: OverviewIcon,
         href: routes.overview,
       },
-
       {
         name: "Vehicle Onboarding",
         icon: OnboadringIcon,
@@ -95,33 +95,6 @@ export const menuItems: MenuItemsType[] = [
         icon: CustomerIcon,
         href: routes.customers,
       },
-
-      // {
-      //   name: "Vehicle Onboarding",
-      //   icon: OnboadringIcon,
-      //   // subMenuItems: [
-      //   //   {
-      //   //     name: "Overview",
-      //   //     href: routes.inventory.overview,
-      //   //   },
-      //   //   {
-      //   //     name: "New Unit",
-      //   //     href: routes.inventory.newUnit,
-      //   //   },
-      //   //   {
-      //   //     name: "Transport",
-      //   //     href: routes.inventory.transport,
-      //   //   },
-      //   //   {
-      //   //     name: "Inspection & Reparing",
-      //   //     href: routes.inventory.inspectionAndRepair,
-      //   //   },
-      //   //   {
-      //   //     name: "Preparation & Detailing",
-      //   //     href: routes.inventory.preparationAndDetailing,
-      //   //   },
-      //   // ],
-      // }
     ],
   },
 ];
