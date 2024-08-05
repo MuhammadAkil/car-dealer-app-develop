@@ -33,7 +33,7 @@ function LinkMenuItem({ item }: { item: ItemType }) {
           "group relative flex cursor-pointer items-center justify-between rounded-full px-4"
         )}
       >
-        <span className="flex items-center">
+        <span className="flex items-center group-hover:fill-[#18746c] group-hover:text-[#18746c]">
           <span
             className={cn(
               "me-2 inline-flex h-5 w-5 items-center justify-center rounded-md [&>svg]:h-[20px] [&>svg]:w-[20px]"
