@@ -9,15 +9,15 @@ export default function TotalOnboadingIcon({
       width="32px"
       height="32px"
       viewBox="0 0 64 64"
-      enable-background="new 0 0 64 64"
+      enableBackground="new 0 0 64 64"
       fill="#000000"
       {...props}
     >
-      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
       <g
         id="SVGRepo_tracerCarrier"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       ></g>
       <g id="SVGRepo_iconCarrier">
         <g>

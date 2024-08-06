@@ -14,12 +14,12 @@ export default function WarningIcon({
         r="8.4"
         fill="none"
         stroke="#e04006"
-        stroke-width="2.4"
+        strokeWidth="2.4"
       />
       <path
         fill="none"
         stroke="#e04006"
-        stroke-width="2.4"
+        strokeWidth="2.4"
         d="M9.6 4.8v7.2m0 1.2v2.4"
       />
     </svg>
