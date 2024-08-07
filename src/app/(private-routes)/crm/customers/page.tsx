@@ -4,12 +4,13 @@ import ManualEntry from "@/components/icons/ManualEntry";
 import PageHeader from "@/components/pageHeader";
 import SimpleDropdown from "@/components/simpleDropdown";
 import CreateCustomer from "@/containers/crm/customers/create/createCustomer";
-import EditCustomer from "@/containers/crm/customers/customers-list/EditCustomer";
 import { CustomersData, headerColsForCustomer } from "@/data/customers-data";
 import CustomerTable from "@/containers/crm/customers/customers-list/table"
 import { useState } from "react";
 import { Modal } from "rizzui";
 import UploadCustomers from "@/containers/crm/customers/upload-customers/upload-customers";
+import AddManual from "@/components/icons/AddManual";
+import UploadData from "@/components/icons/UploadData";
 
 const pageHeader = {
   title: "Customers",
@@ -46,7 +47,7 @@ export default function CustomersPage() {
         setModalState(true);
 
       },
-      icon: <ManualEntry />,
+      icon: <AddManual />,
     },
     {
       label: "Upload Customer Data",
@@ -56,7 +57,7 @@ export default function CustomersPage() {
         setModalWidth("!max-w-xl");
 
       },
-      icon: <BulkUpload />,
+      icon: <UploadData />,
     },
   ];
 
