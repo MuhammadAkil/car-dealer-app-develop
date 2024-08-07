@@ -18,9 +18,9 @@ export default function SimpleDropdown({
   };
 
   return (
-    <Dropdown onChange={handleToggle}>
+    <Dropdown onChange={handleToggle} placement="bottom-end">
       <Dropdown.Trigger>
-        <Button as="span" variant="solid" className="cursor-pointer" onClick={() => handleToggle(!isOpen)}>
+        <Button as="span" variant="solid" className="cursor-pointer hover:bg-primaryHover" onClick={() => handleToggle(!isOpen)}>
           {buttonText}
           {isOpen ? (
             <FaChevronUp className="ml-2 w-5 transition-transform duration-300" />
@@ -29,11 +29,11 @@ export default function SimpleDropdown({
           )}
         </Button>
       </Dropdown.Trigger>
-      <Dropdown.Menu className="w-auto" onClick={() => handleToggle(!isOpen)}>
+      <Dropdown.Menu className="w-auto " onClick={() => handleToggle(!isOpen)}>
         {options.map((op, key) => (
           <Dropdown.Item key={key} onClick={op.onClick}>
             {op.icon}
-            <span className="ml-3"> {op.label}</span>
+            <span className="ml-1"> {op.label}</span>
           </Dropdown.Item>
         ))}
       </Dropdown.Menu>

@@ -40,7 +40,7 @@ export default function CustomersPage() {
 
   const dropdownOptions = [
     {
-      label: "Manual Entry",
+      label: "Manual Customer Entry",
       onClick: () => {
         setModalContent(<CreateCustomer closeModal={handleCloseModal} />);
         setModalState(true);
@@ -49,7 +49,7 @@ export default function CustomersPage() {
       icon: <ManualEntry />,
     },
     {
-      label: "Upload Data",
+      label: "Upload Customer Data",
       onClick: () => {
         setModalContent(<UploadCustomers closeModal={handleCloseModal} />);
         setModalState(true);
@@ -62,14 +62,6 @@ export default function CustomersPage() {
 
   return (
     <>
-      <Modal
-        isOpen={modalState}
-        onClose={handleCloseModal}
-        overlayClassName="backdrop-blur"
-        containerClassName={`!shadow-2xl ${modalWidth}`} 
-      >
-        {modalContent}
-      </Modal>
       <PageHeader
         title={pageHeader.title}
         breadcrumb={pageHeader.breadcrumb}
@@ -81,6 +73,14 @@ export default function CustomersPage() {
         </div>
       </PageHeader>
       <CustomerTable data={CustomersData} headerCols={headerColsForCustomer} />
+      <Modal
+        isOpen={modalState}
+        onClose={handleCloseModal}
+        overlayClassName="backdrop-blur"
+        containerClassName={`!shadow-2xl ${modalWidth}`} 
+      >
+        {modalContent}
+      </Modal>
 
     </>
   );

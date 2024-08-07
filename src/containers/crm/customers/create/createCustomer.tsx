@@ -112,7 +112,7 @@ export default function CreateCar({ closeModal }: CreateCustomerProps) {
 
             <div className="py-3">
             <Title as="h6" className="mb-5 font-semibold">Personal Information:</Title>
-                     <div className="grid grid-cols-3 gap-y-6 gap-x-5 [&_label>span]:font-medium">
+                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-6 gap-x-5 [&_label>span]:font-medium">
                 <Input
                   label="First Name"
                   placeholder="Enter First Name"
@@ -176,7 +176,7 @@ export default function CreateCar({ closeModal }: CreateCustomerProps) {
             </div>
             <div className="py-3">
             <Title as="h6" className="mb-5 font-semibold">Contact Information:</Title>
-              <div className="grid grid-cols-2 gap-y-6 gap-x-5 [&_label>span]:font-medium">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-6 gap-x-5 [&_label>span]:font-medium">
                 <Input
                   label="Email"
                   type='email'
@@ -197,7 +197,7 @@ export default function CreateCar({ closeModal }: CreateCustomerProps) {
             </div>
             <div className="py-3">
             <Title as="h6" className="mb-5 font-semibold">Address Information:</Title>
-              <div className="grid grid-cols-3 py-3 gap-y-6 gap-x-5 [&_label>span]:font-medium">
+              <div className="grid grid-cols-1 lg:grid-cols-3 py-3 gap-y-6 gap-x-5 [&_label>span]:font-medium">
                 <Input
                   label="APT Number"
                   placeholder="Enter Vendor APT Number "
@@ -234,7 +234,7 @@ export default function CreateCar({ closeModal }: CreateCustomerProps) {
                   )}
                 />
               </div>
-              <div className="grid grid-cols-2 py-3 gap-y-6 gap-x-5 [&_label>span]:font-medium">
+              <div className="grid grid-cols-1 lg:grid-cols-2 py-3 gap-y-6 gap-x-5 [&_label>span]:font-medium">
 
                 <Controller
                   name="State"
@@ -279,7 +279,7 @@ export default function CreateCar({ closeModal }: CreateCustomerProps) {
                   )}
                 />
               </div>
-              <div className="grid grid-cols-2 py-3 gap-y-6 gap-x-5 [&_label>span]:font-medium">
+              <div className="grid grid-cols-1 lg:grid-cols-2 py-3 gap-y-6 gap-x-5 [&_label>span]:font-medium">
 
                 <Textarea
                   label="Mailing Address"
@@ -294,7 +294,7 @@ export default function CreateCar({ closeModal }: CreateCustomerProps) {
 
             <div className="py-3">
             <Title as="h6" className="mb-5 font-semibold">Driver Lincense Information:</Title>
-              <div className="grid grid-cols-2 gap-y-6 gap-x-5 [&_label>span]:font-medium">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-6 gap-x-5 [&_label>span]:font-medium">
                 <Input
                   label="Driver Licens Number"
                   placeholder="Enter Driver Licens Number"
@@ -318,7 +318,7 @@ export default function CreateCar({ closeModal }: CreateCustomerProps) {
                 />
               </div>
             </div>
-            <div className="col-span-full flex items-center justify-end gap-4">
+            <div className="col-span-full py-4 flex items-center justify-end gap-4">
               <Button
                 variant="outline"
                 onClick={closeModal}
