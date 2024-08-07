@@ -3,8 +3,9 @@
 import { useState } from "react";
 import { Controller, SubmitHandler } from "react-hook-form";
 import { Form } from "@/components/form";
-import { Input, Button, Select } from "rizzui";
+import { Input, Button, Select, FileInput } from "rizzui";
 import { CreateCustomerInput,createCustomerSchema } from "@/utils/validators/create-customer.schema";
+import { FiUploadCloud } from "react-icons/fi";
 export const CARSTATUSES = {
   newArrival: "New Arrival",
   transport: "Transport",
@@ -18,7 +19,7 @@ export const carStatuses = Object.values(CARSTATUSES).map((status) => ({
   value: status,
 }));
 
-export default function EditCustomer({ closeModal }: any) {
+export default function UploadCustomers({ closeModal }: any) {
   const [reset, setReset] = useState({});
   const [isLoading, setLoading] = useState(false);
 
@@ -59,34 +60,10 @@ export default function EditCustomer({ closeModal }: any) {
         return (
           <>
             <div className="col-span-2 flex flex-col items-center gap-4"></div>
-            <Input
-              label="Customer Name"
-              placeholder="Enter Customer Name"
-              {...register("Name")}
-              className="col-span-full"
-              error={errors.Name?.message}
-            />
-            <Input
-              label="Customer Email"
-              placeholder="Enter Customer Email"
-              {...register("Email")}
-              className="col-span-full"
-              error={errors.Email?.message}
-            />
-            <Input
-              label="Phone"
-              placeholder="Enter Phone"
-              {...register("Phone")}
-              className="col-span-full"
-              error={errors.Phone?.message}
-            />
-            <Input
-              label="User Name"
-              placeholder="Enter User Name"
-              {...register("userName")}
-              className="col-span-full"
-              error={errors.userName?.message}
-            />
+            <FileInput
+        label="Upload Data"
+        rounded="pill"
+      />
             {/* <Controller
               name="City"
               control={control}
@@ -114,16 +91,16 @@ export default function EditCustomer({ closeModal }: any) {
               <Button
                 variant="outline"
                 onClick={closeModal}
-                className="w-full @xl:w-auto"
+                className=""
               >
-                Edit More
+                Cancel
               </Button>
               <Button
                 type="submit"
                 isLoading={isLoading}
-                className="hover:bg-primaryHover w-full @xl:w-auto"
-              >
-                Save
+                onClick={closeModal}
+                className="hover:bg-primaryHover flex gap-3">
+               <FiUploadCloud/> Upload
               </Button>
             </div>
           </>

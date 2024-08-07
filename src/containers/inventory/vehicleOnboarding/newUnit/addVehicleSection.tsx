@@ -52,7 +52,7 @@ export default function AddVehicleSection() {
               fill="none"
               stroke="currentColor"
               strokeLinecap="round"
-              stroke-miterlimit="10"
+              strokeMiterlimit="10"
               strokeWidth="4"
               opacity="0.5"
               d="M63.28 10.2s5.81.88 11.19 6.64c5.38 5.77 7.87 13.18 7.87 13.18M77.44 3.5s4.87 2.45 8.63 8.5c3.76 6.05 4.67 13.05 4.67 13.05m-55.03 85.68s-5.86.39-12.35-4.09-10.52-11.18-10.52-11.18m18.69 25.1s-5.44.23-11.68-3.22-10.44-9.12-10.44-9.12"

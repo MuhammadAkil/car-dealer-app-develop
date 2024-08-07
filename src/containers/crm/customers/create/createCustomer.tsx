@@ -67,7 +67,6 @@ export default function CreateCar({ closeModal }: CreateCustomerProps) {
 
 
   const onSubmit: SubmitHandler<CreateCustomerInput> = (data) => {
-    // set timeout ony required to display loading state of the create category button
     const formattedData = {
       ...data,
       createdAt: new Date(),
@@ -100,7 +99,6 @@ export default function CreateCar({ closeModal }: CreateCustomerProps) {
         setValue,
         formState: { errors },
       }) => {
-        console.log('errors: ', errors);
         return (
           <>
             <div className=" flex items-center justify-between">

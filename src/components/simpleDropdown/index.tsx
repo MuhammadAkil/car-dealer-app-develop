@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Dropdown, Button } from "rizzui";
-import { FaChevronDown } from "react-icons/fa6";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
 
 export default function SimpleDropdown({
   buttonText,
@@ -12,25 +12,26 @@ export default function SimpleDropdown({
   options: { label: string; onClick: () => void; icon: React.ReactNode }[];
 }) {
   const [isOpen, setIsOpen] = useState(false);
-  const handleToggle = () => {
-    setIsOpen(!isOpen);
+
+  const handleToggle = (open: boolean) => {
+    setIsOpen(open);
   };
 
   return (
     <Dropdown onChange={handleToggle}>
       <Dropdown.Trigger>
-        <Button as="span" variant="solid" className="cursor-pointer">
+        <Button as="span" variant="solid" className="cursor-pointer" onClick={() => handleToggle(!isOpen)}>
           {buttonText}
-          <FaChevronDown
-            className={`ml-2 w-5 transition-transform duration-300 ${
-              isOpen ? "transform rotate-180" : ""
-            }`}
-          />
+          {isOpen ? (
+            <FaChevronUp className="ml-2 w-5 transition-transform duration-300" />
+          ) : (
+            <FaChevronDown className="ml-2 w-5 transition-transform duration-300" />
+          )}
         </Button>
       </Dropdown.Trigger>
-      <Dropdown.Menu className="w-150">
-        {options.map((op: any, key: number) => (
-          <Dropdown.Item key={key}>
+      <Dropdown.Menu className="w-auto" onClick={() => handleToggle(!isOpen)}>
+        {options.map((op, key) => (
+          <Dropdown.Item key={key} onClick={op.onClick}>
             {op.icon}
             <span className="ml-3"> {op.label}</span>
           </Dropdown.Item>
