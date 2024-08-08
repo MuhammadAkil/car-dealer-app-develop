@@ -167,6 +167,7 @@ export const getColumns = ({
       width: 150,
       render: (phone: string) => <Text className="text-sm">{phone}</Text>,
     },
+  
     {
       title: <HeaderCell title="CREATED" />,
       dataIndex: "createdAt",

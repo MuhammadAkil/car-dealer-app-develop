@@ -23,7 +23,7 @@ const filterState = {
   status: "",
 };
 
-export default function VehicleTable({
+export default function CustomerTable({
   data = [],
   headerCols,
 }: {
@@ -92,7 +92,8 @@ export default function VehicleTable({
     ]
   );
 
-  const { visibleColumns, checkedColumns, setCheckedColumns } =    useColumn(columns);
+  const { visibleColumns, checkedColumns, setCheckedColumns } =
+    useColumn(columns);
   return (
     <>
       <ControlledTable

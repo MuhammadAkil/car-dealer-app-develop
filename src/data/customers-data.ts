@@ -77,6 +77,7 @@ export const CustomersData: CustomerType[] = [
 
 
 export const headerColsForCustomer = [
+  "checked",
   'customer',
   "name",
   "phone",
@@ -86,14 +87,5 @@ export const headerColsForCustomer = [
   "amount",
   "status",
   "action",
-  // id: string;
-  // name: string;
-  // avatarURL: string;
-  // email: string;
-  // phone: string;
-  // createdAt: string;
-  // userName: string;
-  // amount: string;
-  // status: string;
 ];
 
