@@ -37,7 +37,8 @@ export default function SimpleDropdown({
           <Button
             as="span"
             variant="solid"
-            className="hover:bg-primaryHover cursor-pointer"
+            className={`hover:bg-primaryHover cursor-pointer ${
+                isOpen ? "bg-primaryHover" : ""}`}
           >
             {buttonText}
             <FaChevronDown
