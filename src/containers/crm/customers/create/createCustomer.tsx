@@ -5,8 +5,6 @@ import { PiXBold } from 'react-icons/pi';
 import { Controller, SubmitHandler } from 'react-hook-form';
 import { Form } from '@/components/form';
 import { Input, Button, ActionIcon, Title, Text, Select, Textarea, FileInput } from 'rizzui';
-import { useModal } from '@/shared/modal-views/use-modal';
-import { CreateCarInput, createCarSchema } from '@/utils/validators/create-car.schema';
 import { CreateCustomerInput, createCustomerSchema } from '@/utils/validators/create-customer.schema';
 
 type CreateCustomerProps = {
