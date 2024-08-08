@@ -69,7 +69,7 @@ export default function CustomersPage() {
       >
         <div className="mt-4 flex items-center gap-3 @lg:mt-0">
           <div className="-order-5 flex basis-auto justify-end @xl:-order-4 @4xl:-order-1">
-            <SimpleDropdown buttonText="Add Customer" options={dropdownOptions} />
+<SimpleDropdown buttonText="Add Customer" options={dropdownOptions} placement="bottom-end" />
           </div>
         </div>
       </PageHeader>

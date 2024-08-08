@@ -7,9 +7,11 @@ import { FaChevronDown } from "react-icons/fa6";
 export default function SimpleDropdown({
   buttonText,
   options,
+  placement = "bottom-start",
 }: {
   buttonText: string;
   options: { label: string; onClick: () => void; icon: React.ReactNode }[];
+  placement?: "bottom-end" | "bottom-start" | "top-end" | "top-start"; 
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -32,7 +34,7 @@ export default function SimpleDropdown({
 
   return (
     <div ref={ref} className="inline-block relative">
-      <Dropdown onChange={handleToggle} placement="bottom-end">
+      <Dropdown onChange={handleToggle} placement={placement}>
         <Dropdown.Trigger as="button" onClick={handleToggle}>
           <Button
             as="span"
@@ -48,7 +50,7 @@ export default function SimpleDropdown({
           </Button>
         </Dropdown.Trigger>
         <Dropdown.Menu className="w-150">
-          {options.map((op: any, key: number) => (
+          {options.map((op, key) => (
             <Dropdown.Item key={key} onClick={op.onClick}>
               {op.icon}
               <span className="ml-1"> {op.label}</span>
