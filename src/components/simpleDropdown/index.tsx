@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Dropdown, Button } from "rizzui";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
+import { FaChevronDown } from "react-icons/fa6";
 
 export default function SimpleDropdown({
   buttonText,
@@ -12,31 +12,49 @@ export default function SimpleDropdown({
   options: { label: string; onClick: () => void; icon: React.ReactNode }[];
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
-  const handleToggle = (open: boolean) => {
-    setIsOpen(open);
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (ref.current && !ref.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref]);
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
-    <Dropdown onChange={handleToggle} placement="bottom-end">
-      <Dropdown.Trigger>
-        <Button as="span" variant="solid" className="cursor-pointer hover:bg-primaryHover" onClick={() => handleToggle(!isOpen)}>
-          {buttonText}
-          {isOpen ? (
-            <FaChevronUp className="ml-2 w-5 transition-transform duration-300" />
-          ) : (
-            <FaChevronDown className="ml-2 w-5 transition-transform duration-300" />
-          )}
-        </Button>
-      </Dropdown.Trigger>
-      <Dropdown.Menu className="w-auto " onClick={() => handleToggle(!isOpen)}>
-        {options.map((op, key) => (
-          <Dropdown.Item key={key} onClick={op.onClick}>
-            {op.icon}
-            <span className="ml-1"> {op.label}</span>
-          </Dropdown.Item>
-        ))}
-      </Dropdown.Menu>
-    </Dropdown>
+    <div ref={ref} className="inline-block relative">
+      <Dropdown onChange={handleToggle} placement="bottom-end">
+        <Dropdown.Trigger as="button" onClick={handleToggle}>
+          <Button
+            as="span"
+            variant="solid"
+            className="hover:bg-primaryHover cursor-pointer"
+          >
+            {buttonText}
+            <FaChevronDown
+              className={`ml-2 w-5 transition-transform duration-300 ${
+                isOpen ? "transform rotate-180" : ""}`}
+            />
+          </Button>
+        </Dropdown.Trigger>
+        <Dropdown.Menu className="w-150">
+          {options.map((op: any, key: number) => (
+            <Dropdown.Item key={key} onClick={op.onClick}>
+              {op.icon}
+              <span className="ml-1"> {op.label}</span>
+            </Dropdown.Item>
+          ))}
+        </Dropdown.Menu>
+      </Dropdown>
+    </div>
   );
 }
