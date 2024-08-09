@@ -7,11 +7,13 @@ import { FaChevronDown } from "react-icons/fa6";
 export default function SimpleDropdown({
   buttonText,
   options,
-  placement = "bottom-start",
+  placement = "bottom-end",  // Default placement value
+
 }: {
   buttonText: string;
-  options: { label: string; onClick: () => void; icon: React.ReactNode }[];
-  placement?: "bottom-end" | "bottom-start" | "top-end" | "top-start"; 
+    options: { label: string; onClick: () => void; icon: React.ReactNode }[];
+    placement?: "bottom-end" | "bottom-start" | "top-end" | "top-start";  // Placement options
+
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -39,19 +41,19 @@ export default function SimpleDropdown({
           <Button
             as="span"
             variant="solid"
-            className={`hover:bg-primaryHover cursor-pointer ${
-                isOpen ? "bg-primaryHover" : ""}`}
+            className="hover:bg-primaryHover cursor-pointer"
           >
             {buttonText}
             <FaChevronDown
               className={`ml-2 w-5 transition-transform duration-300 ${
-                isOpen ? "transform rotate-180" : ""}`}
+                isOpen ? "transform rotate-180" : "rotate-0"
+              }`}
             />
           </Button>
         </Dropdown.Trigger>
         <Dropdown.Menu className="w-150">
-          {options.map((op, key) => (
-            <Dropdown.Item key={key} onClick={op.onClick}>
+          {options.map((op: any, key: number) => (
+            <Dropdown.Item key={key}>
               {op.icon}
               <span className="ml-1"> {op.label}</span>
             </Dropdown.Item>

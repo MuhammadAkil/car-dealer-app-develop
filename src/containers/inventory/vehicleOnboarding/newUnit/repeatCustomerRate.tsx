@@ -81,20 +81,20 @@ const data = [
 
 const viewOptions = [
   {
-    label: "June",
-    value: "June",
+    label: "June 2024",
+    value: "June 2024",
   },
   {
-    label: "May",
-    value: "May",
+    label: "May 2024",
+    value: "May 2024",
   },
   {
-    label: "April",
-    value: "April",
+    label: "April 2024",
+    value: "April 2024",
   },
   {
-    label: "March",
-    value: "March",
+    label: "March 2024",
+    value: "March 2024",
   },
 ];
 
@@ -130,7 +130,7 @@ export default function RepeatCustomerRate({
       className={className}
     >
       <SimpleBar>
-        <div className="h-[480px] w-full pt-9">
+        <div className="h-[340px] w-full pt-9">
           <ResponsiveContainer
             width="100%"
             height="100%"

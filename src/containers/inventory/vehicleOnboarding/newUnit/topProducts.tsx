@@ -7,8 +7,7 @@ import DropdownAction from "@/components/charts/dropdownAction";
 export const topProducts = [
   {
     id: 1,
-    thumbnail:
-      "https://isomorphic-furyroad.s3.amazonaws.com/public/products/modern/1.webp",
+    thumbnail: "/cars/chevrolet.jpg",
     title: "Chevrolet Silverado",
     description: "Watch",
     price: "$1,290.00",
@@ -16,8 +15,7 @@ export const topProducts = [
   },
   {
     id: 2,
-    thumbnail:
-      "https://isomorphic-furyroad.s3.amazonaws.com/public/products/modern/2.webp",
+    thumbnail: "/cars/corrola.jpg",
     title: "2024 Ford F-150",
     description: "Apple Headphone",
     price: "$1000.00",
@@ -25,8 +23,7 @@ export const topProducts = [
   },
   {
     id: 3,
-    thumbnail:
-      "https://isomorphic-furyroad.s3.amazonaws.com/public/products/modern/3.webp",
+    thumbnail: "/cars/kia.jpg",
     title: "2024 Toyota RAV8",
     description: "Home Decor",
     price: "$220.00",
@@ -34,8 +31,7 @@ export const topProducts = [
   },
   {
     id: 4,
-    thumbnail:
-      "https://isomorphic-furyroad.s3.amazonaws.com/public/products/modern/4.webp",
+    thumbnail: "/cars/mazda.jpg",
     title: "Chevrolet Silverado 1500",
     description: "Gadgets",
     price: "$150.90",
@@ -43,8 +39,7 @@ export const topProducts = [
   },
   {
     id: 5,
-    thumbnail:
-      "https://isomorphic-furyroad.s3.amazonaws.com/public/products/modern/5.webp",
+    thumbnail: "/cars/subaru.jpg",
     title: "Chevrolet Silverado 1500",
     description: "Accessories",
     price: "$20.00",
@@ -52,142 +47,79 @@ export const topProducts = [
   },
   {
     id: 6,
-    thumbnail:
-      "https://isomorphic-furyroad.s3.amazonaws.com/public/products/modern/6.webp",
-    title: "2024 Toyota RAV8",
-    description: "Fashion",
-    price: "$220.00",
-    rating: [4, 4.5, 5],
-  },
-  {
-    id: 7,
-    thumbnail:
-      "https://isomorphic-furyroad.s3.amazonaws.com/public/products/modern/7.webp",
-    title: "Shoes",
-    description: "Fashion",
-    price: "$150.90",
-    rating: [4, 4.5, 5],
-  },
-  {
-    id: 8,
-    thumbnail:
-      "https://isomorphic-furyroad.s3.amazonaws.com/public/products/modern/8.webp",
-    title: "Perfume",
-    description: "Fashion",
-    price: "$70.00",
-    rating: [4, 4.5, 5],
-  },
-];
-
-export const topProductList = [
-  {
-    id: 1,
-    thumbnail:
-      "https://isomorphic-furyroad.s3.amazonaws.com/public/products/modern/1.webp",
-    title: "Casio Watch",
-    description: "Watch",
-    price: "$1,290.00",
-    rating: [4, 4.5, 5],
-  },
-  {
-    id: 2,
-    thumbnail:
-      "https://isomorphic-furyroad.s3.amazonaws.com/public/products/modern/2.webp",
-    title: "Apple Headphone",
+    thumbnail: "/cars/corrola.jpg",
+    title: "2024 Ford F-150",
     description: "Apple Headphone",
     price: "$1000.00",
     rating: [3, 4, 5],
   },
   {
-    id: 3,
-    thumbnail:
-      "https://isomorphic-furyroad.s3.amazonaws.com/public/products/modern/3.webp",
-    title: "Marc Decadent",
+    id: 7,
+    thumbnail: "/cars/kia.jpg",
+    title: "2024 Toyota RAV8",
     description: "Home Decor",
     price: "$220.00",
     rating: [2, 3, 5],
   },
   {
-    id: 4,
-    thumbnail:
-      "https://isomorphic-furyroad.s3.amazonaws.com/public/products/modern/4.webp",
-    title: "Classic Heels",
+    id: 8,
+    thumbnail: "/cars/mazda.jpg",
+    title: "Chevrolet Silverado 1500",
     description: "Gadgets",
     price: "$150.90",
     rating: [4, 4.5, 5],
   },
   {
-    id: 5,
-    thumbnail:
-      "https://isomorphic-furyroad.s3.amazonaws.com/public/products/modern/5.webp",
-    title: "Apple Watch",
-    description: "Accessories",
-    price: "$20.00",
-    rating: [4, 4.5, 5],
-  },
-  {
-    id: 6,
-    thumbnail:
-      "https://isomorphic-furyroad.s3.amazonaws.com/public/products/modern/6.webp",
-    title: "Nike Air SHoe",
-    description: "Fashion",
-    price: "$220.00",
-    rating: [4, 4.5, 5],
-  },
-  {
-    id: 7,
-    thumbnail:
-      "https://isomorphic-furyroad.s3.amazonaws.com/public/products/modern/7.webp",
-    title: "Blue Jacket",
-    description: "Fashion",
+    id: 9,
+    thumbnail: "/cars/mazda.jpg",
+    title: "Chevrolet Silverado 1500",
+    description: "Gadgets",
     price: "$150.90",
     rating: [4, 4.5, 5],
   },
 ];
 
-const currentDate = new Date();
-const previousMonthDate = new Date(
-  currentDate.getFullYear(),
-  currentDate.getMonth() - 1,
-  currentDate.getDate()
-);
-
 const viewOptions = [
   {
-    label: "June",
-    value: "June",
+    label: "June 2024",
+    value: "June 2024",
   },
   {
-    label: "May",
-    value: "May",
+    label: "May 2024",
+    value: "May 2024",
   },
   {
-    label: "April",
-    value: "April",
+    label: "April 2024",
+    value: "April 2024",
   },
   {
-    label: "March",
-    value: "March",
+    label: "March 2024",
+    value: "March 2024",
   },
 ];
 
-export default function TopProducts({ className }: { className?: string }) {
+export default function TopProducts({
+  className,
+  isExpanded,
+}: {
+  className?: string;
+  isExpanded: boolean;
+}) {
   return (
     <WidgetCard
       title={"Top Sold Vehicles in US"}
-      description={
-        <>
-          <DropdownAction
-            options={viewOptions}
-            onChange={() => {}}
-            dropdownClassName="!z-0"
-          />
-        </>
-      }
       descriptionClassName="flex items-center justify-end [&_.react-datepicker-wrapper]:w-full [&_.react-datepicker-wrapper]:max-w-[228px] text-gray-500"
       className={className}
     >
-      <div className="custom-scrollbar -me-2 mt-[18px] grid max-h-[460px] gap-4 overflow-y-auto @sm:gap-5">
+      <div className="flex flex-center items-center gap-1">
+        <div>Month:</div>
+        <DropdownAction
+          options={viewOptions}
+          onChange={() => {}}
+          dropdownClassName="!z-0"
+        />
+      </div>
+      <div className={`custom-scrollbar -me-2 mt-[18px] grid ${isExpanded ? 'max-h-[730px]': 'max-h-[340px]' }  gap-4 overflow-y-auto @sm:gap-5`}>
         {topProducts.map((product) => (
           <div
             key={product.title + product.id}
@@ -207,6 +139,7 @@ export default function TopProducts({ className }: { className?: string }) {
                 <Text className="font-lexend text-sm font-medium text-gray-900 dark:text-gray-700"></Text>
                 <Text className="font-lexend text-sm font-medium text-gray-900 dark:text-gray-700">
                   #{product.id}
+                  <br />
                   {product.title}
                 </Text>
               </div>

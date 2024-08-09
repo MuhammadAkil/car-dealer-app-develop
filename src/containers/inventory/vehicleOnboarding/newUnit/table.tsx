@@ -5,6 +5,8 @@ import { useTable } from "@/hooks/useTable";
 import { useColumn } from "@/hooks/useColumn";
 import ControlledTable from "@/components/controlledTable";
 import { getColumns } from "./columns";
+import { Title } from "rizzui";
+import cn from "@/utils/classNames";
 
 const filterState = {
   age: "",
@@ -68,11 +70,18 @@ export default function VehicleTable({
     ]
   );
 
-  const { visibleColumns } =
-    useColumn(columns);
+  const { visibleColumns } = useColumn(columns);
 
   return (
     <>
+      <Title
+        as="h3"
+        className={cn(
+          "text-base font-semibold text-lg text-gray-900 font-lexend mb-5"
+        )}
+      >
+        Last Added Vehicle
+      </Title>
       <ControlledTable
         variant="modern"
         isLoading={isLoading}
